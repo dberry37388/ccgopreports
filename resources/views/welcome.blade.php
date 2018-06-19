@@ -80,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{ config('app.name') }}
+                    <img src="{{ asset('images/ccgoplogo.jpeg') }}" alt="" width="400px">
                 </div>
 
                 <div class="links">
