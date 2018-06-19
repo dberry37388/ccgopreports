@@ -11,7 +11,16 @@
     <tr>
         <td>
             <a href="{{ route('districtsIndex') }}">{{ __('Districts') }}</a>
-            <p>Click here to view a list of available districts.</p>
+
+            <p>Choose a district from the list below to download that district's walk list.</p>
+
+            <div class="form-group mt-2">
+                <select onchange="location = this.value;" class="form-control">
+                    @for($i = 1; $i <= 21; $i++)
+                        <option value="{{ route('exportDistrict', $i) }}">District {{ $i }}</option>
+                    @endfor
+                </select>
+            </div>
         </td>
     </tr>
 
