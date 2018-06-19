@@ -11,6 +11,8 @@ window.Popper = require('popper.js').default;
 try {
     window.$ = window.jQuery = require('jquery');
 
+    window.Highcharts = require('highcharts');
+
     require('bootstrap');
 } catch (e) {}
 

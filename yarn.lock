@@ -1338,7 +1338,7 @@ clone-deep@^2.0.1:
 
 clone-stats@^0.0.1:
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/clone-stats/-/clone-stats-0.0.1.tgz#b88f94a82cf38b8791d58046ea4029ad88ca99d1"
+  resolved "https://registry.yarnpkg.com/clone-charts/-/clone-charts-0.0.1.tgz#b88f94a82cf38b8791d58046ea4029ad88ca99d1"
 
 clone@^0.2.0:
   version "0.2.0"
@@ -7091,14 +7091,14 @@ vinyl@^0.4.3:
   resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-0.4.6.tgz#2f356c87a550a255461f36bbeb2a5ba8bf784847"
   dependencies:
     clone "^0.2.0"
-    clone-stats "^0.0.1"
+    clone-charts "^0.0.1"
 
 vinyl@^0.5.0:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-0.5.3.tgz#b0455b38fc5e0cf30d4325132e461970c2091cde"
   dependencies:
     clone "^1.0.0"
-    clone-stats "^0.0.1"
+    clone-charts "^0.0.1"
     replace-ext "0.0.1"
 
 vinyl@^1.0.0:
@@ -7106,7 +7106,7 @@ vinyl@^1.0.0:
   resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-1.2.0.tgz#5c88036cf565e5df05558bfc911f8656df218884"
   dependencies:
     clone "^1.0.0"
-    clone-stats "^0.0.1"
+    clone-charts "^0.0.1"
     replace-ext "0.0.1"
 
 vm-browserify@0.0.4:

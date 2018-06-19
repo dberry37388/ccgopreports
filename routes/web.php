@@ -36,3 +36,7 @@ Route::group(['prefix' => 'exports', 'namespace' => 'Exports'], function() {
         Route::get('{district}/export', 'DistrictListController@export')->name('exportDistrict');
     });
 });
+
+Route::group(['prefix' => 'charts'], function() {
+    Route::get('/', 'ChartController@index')->name('chartsIndex');
+});

@@ -65,5 +65,10 @@ return [
         'NY' => 'Y',
         'YN' => 'Y',
         'NN' => 'Y',
+    ],
+    
+    'charts' => [
+        'countywide',
+
     ]
 ];
