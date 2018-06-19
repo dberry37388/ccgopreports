@@ -16,6 +16,7 @@
 
             <div class="form-group mt-2">
                 <select onchange="location = this.value;" class="form-control">
+                    <option value="">Choose a District</option>
                     @for($i = 1; $i <= 21; $i++)
                         <option value="{{ route('exportDistrict', $i) }}">District {{ $i }}</option>
                     @endfor
