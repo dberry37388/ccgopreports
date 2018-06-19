@@ -150,6 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
+        App\Providers\ExcelMacrosServiceProvider::class,
 
         /*
          * Application Service Providers...

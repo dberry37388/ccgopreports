@@ -18,3 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('districts', 'Exports\DistrictListController@index')->name('districtsIndex');
+
+Route::group(['prefix' => 'exports', 'namespace' => 'Exports'], function() {
+    Route::get('2018-master-walk-list', 'MasterWalkListController@export')->name('exportMasterWalkList');
+    Route::get('2018-crossover-list', 'CrossoverListController@export')->name('exportCrossoverList');
+    
+    Route::group(['prefix' => 'first-time-voters'], function() {
+        Route::get('/', 'FirstTimeVoterListController@exportAll')->name('exportFirstTimeVoterList');
+        Route::get('democrat', 'FirstTimeVoterListController@exportDemocrat')->name('exportFirstTimeDemocratList');
+        Route::get('republican', 'FirstTimeVoterListController@exportRepublican')->name('exportFirstTimeRepublicanList');
+    });
+    
+    Route::group(['prefix' => 'districts'], function() {
+        Route::get('{district}', 'DistrictListController@show')->name('showDistrict');
+        Route::get('{district}/export', 'DistrictListController@export')->name('exportDistrict');
+    });
+});
