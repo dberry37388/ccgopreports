@@ -7,11 +7,22 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import "offcanvas";
 @import "~font-awesome/scss/font-awesome";
+
+html,
+body {
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
 }
 
 h3.card-title {
