@@ -22,9 +22,9 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('images/gop.png') }}" width="30" height="30" alt="">
+                    <img src="{{ asset('images/gop.png') }}" width="30" height="30" alt="{{ config('app.name') }}">
+                    {{ config('app.name') }}
                 </a>
-                {{ config('app.name') }}
                 <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"  data-toggle="offcanvas">
                     <span class="navbar-toggler-icon"></span>
                 </button>

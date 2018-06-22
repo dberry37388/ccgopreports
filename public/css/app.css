@@ -13512,6 +13512,10 @@ body {
   padding-left: 0.8rem;
 }
 
+.navbar-brand {
+  margin-right: 1.8rem;
+}
+
 h3.card-title {
   margin-bottom: 20px;
 }

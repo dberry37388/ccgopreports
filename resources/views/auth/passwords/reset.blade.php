@@ -5,9 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
                 <div class="card-body">
+                    <h3 class="card-title">{{ __('Reset Password') }}</h3>
+
                     <form method="POST" action="{{ route('password.request') }}" aria-label="{{ __('Reset Password') }}">
                         @csrf
 
