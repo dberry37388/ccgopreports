@@ -1,3 +1,23 @@
+@push('scripts')
+    <script>
+        $(function() {
+            $("#district-select").on('change', function(e) {
+                let value = this.value;
+                let reportList = $("#reportList");
+
+                if (! value.length) {
+                    reportList.hide();
+                } else {
+                    reportList.show();
+                    $("#districtNumber").text(this.value);
+                    $("#districtMasterListtUri").attr("href", `/exports/districts/${this.value}/export`);
+                    $("#districtHitListUri").attr("href", `/exports/districts/${this.value}/hitlist`);
+                }
+            });
+        });
+    </script>
+@endpush
+
 <table class="table table-hover">
     <tbody>
     <tr>
@@ -15,12 +35,22 @@
             <p>Choose a district from the list below to download that district's walk list.</p>
 
             <div class="form-group mt-2">
-                <select onchange="location = this.value;" class="form-control">
+                <select id="district-select" class="form-control">
                     <option value="">Choose a District</option>
                     @for($i = 1; $i <= 21; $i++)
-                        <option value="{{ route('exportDistrict', $i) }}">District {{ $i }}</option>
+                        <option value="{{ $i }}">District {{ $i }}</option>
                     @endfor
                 </select>
+            </div>
+
+            <div id="reportList" class="form-group" style="display: none">
+                <div class="font-weight-bold">
+                    Choose a Report for <span id="districtNumber"></span>
+                </div>
+
+                <div class="district-reports">
+                    <a id="districtMasterListtUri" href="#">Master List</a> | <a id="districtHitListUri" href="#">Hit List</a>
+                </div>
             </div>
         </td>
     </tr>

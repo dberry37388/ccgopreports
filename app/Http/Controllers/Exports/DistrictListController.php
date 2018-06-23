@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Exports;
 
+use App\Exports\DistrictHitList;
 use App\Exports\DistrictWalkListExport;
 use App\Http\Controllers\Controller;
 use App\Voter;
@@ -26,7 +27,17 @@ class DistrictListController extends Controller
      */
     public function export($district)
     {
-        return new DistrictWalkListExport($district);
+        return new DistrictWalkListExport($district, "district-{$district}-master.xlsx");
+    }
+    
+    /**
+     * Exports the first time voter list.
+     *
+     * @return \App\Exports\DistrictHitList
+     */
+    public function hitlist($district)
+    {
+        return new DistrictHitList($district, "district-{$district}-hitlist.xlsx");
     }
     
     /**

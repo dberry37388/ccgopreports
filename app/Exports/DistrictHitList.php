@@ -14,7 +14,7 @@ use Maatwebsite\Excel\Events\AfterSheet;
 use Maatwebsite\Excel\Events\BeforeExport;
 use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 
-class DistrictWalkListExport implements FromCollection, Responsable, WithMapping, WithHeadings, WithEvents, ShouldAutoSize
+class DistrictHitList implements FromCollection, Responsable, WithMapping, WithHeadings, WithEvents, ShouldAutoSize
 {
     use Exportable;
     
@@ -32,7 +32,6 @@ class DistrictWalkListExport implements FromCollection, Responsable, WithMapping
     
     public function __construct($district, $filename = null)
     {
-    
         $this->district = $district;
         
         if ( ! is_null($filename)) {
@@ -50,6 +49,7 @@ class DistrictWalkListExport implements FromCollection, Responsable, WithMapping
     {
         $voters = Voter::where('pct', $this->district)
             ->hasVoted()
+            ->whereIn('e_1', config('votelist.vote_types.republican'))
             ->defaultOrderBy();
         
         $this->totalRows = $voters->count() + 1;
