@@ -67,27 +67,18 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
                 <div class="title m-b-md">
                     <img src="{{ asset('images/ccgoplogo.jpeg') }}" alt="" width="400px">
                 </div>
 
                 <div class="links">
-                    <a href="https://coffeetngop.org/">Coffee County GOP</a>
-                    <a href="https://www.facebook.com/coffeecountyyr/">Young Republicans</a>
-                    <a href="https://www.facebook.com/CyndiClower/">Republican Woman</a>
-                    <a href="http://www.coffeecountyelectioncommission.com/">Election Commission</a>
+                    @auth
+                        <a href="{{ url('/home') }}">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
                 </div>
             </div>
         </div>

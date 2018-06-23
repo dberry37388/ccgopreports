@@ -32,13 +32,15 @@
                 <div class="navbar-collapse offcanvas-collapse" id="navbarSupportedContent">
 
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
-                        </li>
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('chartsIndex') }}"><i class="fa fa-area-chart"></i> Charts</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('chartsIndex') }}"><i class="fa fa-area-chart"></i> Charts</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -49,7 +51,7 @@
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Request Access') }}</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
