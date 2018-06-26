@@ -23,6 +23,7 @@ Route::get('districts', 'Exports\DistrictListController@index')->name('districts
 
 Route::group(['prefix' => 'exports', 'namespace' => 'Exports'], function() {
     Route::get('2018-master-walk-list', 'MasterWalkListController@export')->name('exportMasterWalkList');
+    Route::get('2018-master-republican-hit-list', 'MasterRepublicanHitListController@export')->name('exportMasterRepublicanHitList');
     Route::get('2018-crossover-list', 'CrossoverListController@export')->name('exportCrossoverList');
     
     Route::group(['prefix' => 'first-time-voters'], function() {

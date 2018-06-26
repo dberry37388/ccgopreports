@@ -30,6 +30,14 @@
 
     <tr>
         <td>
+            <a href="{{ route('exportMasterRepublicanHitList') }}">Master Republican Hit List</a>
+
+            <p>This is a list of voters who voted Republican in the 5/18 elections, are not first time voters and have never voted Democrat.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
             <a href="{{ route('districtsIndex') }}">{{ __('Districts') }}</a>
 
             <p>Choose a district from the list below to download that district's walk list.</p>
