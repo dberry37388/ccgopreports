@@ -38,6 +38,22 @@
 
     <tr>
         <td>
+            <a href="{{ route('exportCountyRepublicanMailingList') }}">County Republican Mailing List</a>
+
+            <p>This is a list of voters who voted Republican in the 5/18 elections, are not first time voters and have never voted Democrat.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <a href="{{ route('exportCountyHardRepublicanSimple') }}">County Hard Republican Mailing List</a>
+
+            <p>Address and phone numbers of Hard Republican voters county-wide. This means they have voted Republican in the last four elections.</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
             <a href="{{ route('districtsIndex') }}">{{ __('Districts') }}</a>
 
             <p>Choose a district from the list below to download that district's walk list.</p>

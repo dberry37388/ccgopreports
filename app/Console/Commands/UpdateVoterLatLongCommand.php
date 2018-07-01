@@ -86,6 +86,7 @@ class UpdateVoterLatLongCommand extends Command
      */
     protected function updateVoterInfo($row)
     {
+        dd($row);
         if ($row[2] == 'Match') {
             list($long, $lat) = explode(',', $row[5]);
             

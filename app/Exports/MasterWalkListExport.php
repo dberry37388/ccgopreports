@@ -31,8 +31,7 @@ class MasterWalkListExport implements FromCollection, Responsable, WithMapping, 
     
     public function collection()
     {
-        $voters = Voter::hasVoted()
-            ->defaultOrderBy();
+        $voters = Voter::defaultOrderBy();
         
         $this->totalRows = $voters->count() + 1;
         
@@ -51,7 +50,7 @@ class MasterWalkListExport implements FromCollection, Responsable, WithMapping, 
             str_replace('931-', '', $voter->phone),
             $voter->pct_nbr,
             $voter->total_votes,
-            round(($voter->republican_votes/$voter->total_votes) * 100 . '%'),
+            $voter->total_votes >= 1 ? round(($voter->republican_votes/$voter->total_votes) * 100 . '%') : '0',
             $voter->republican_votes,
             $voter->democrat_votes,
             formatVotingCode($voter->e_1),
